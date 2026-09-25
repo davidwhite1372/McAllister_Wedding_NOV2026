@@ -1,520 +1,116 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
-  <meta name="theme-color" content="#c9a227">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="Wedding Trip">
-  <meta name="description" content="Laura & Alex Wedding Trip - November 2026 Manassas, VA">
-  <link rel="manifest" href="manifest.json">
-  <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
-  <link rel="apple-touch-icon" href="icons/icon-192.png">
-  <title>Laura & Alex Wedding Trip</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#6d3f35" />
+  <meta name="description" content="David & Melody's Manassas wedding trip — flights, hotel, wedding-day schedule, confirmations and maps." />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+  <title>Wedding Trip — Manassas 2026</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div id="app">
-    <!-- Header -->
-    <header class="header">
-      <div class="header-top">
-        <h1>Laura & Alex</h1>
-        <div class="countdown" id="countdown">— days</div>
-      </div>
-      <div class="header-sub">November 5–8, 2026 · Manassas, VA</div>
-    </header>
-
-    <!-- Content Pages -->
-    <main class="content">
-      <!-- Timeline Page -->
-      <div class="page active" id="page-timeline">
-        <div class="section-title">Trip Timeline</div>
-
-        <div class="card">
-          <div class="card-header">
-            <div>
-              <div class="card-title">Thursday, Nov 5</div>
-              <div class="card-subtitle">Travel Day</div>
-            </div>
-            <span class="badge badge-blue">Travel</span>
-          </div>
-          <div class="timeline">
-            <div class="timeline-item">
-              <div class="timeline-time">1:55 PM</div>
-              <div class="timeline-title">Depart Tampa (TPA)</div>
-              <div class="timeline-desc">United UA 1576 · 2h 16m</div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-time">4:11 PM</div>
-              <div class="timeline-title">Arrive Washington Dulles (IAD)</div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-time">~4:30 PM</div>
-              <div class="timeline-title">Check in – Tempo by Hilton</div>
-              <div class="timeline-desc">1 night · Confirmation 3504070621</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-header">
-            <div>
-              <div class="card-title">Friday, Nov 6</div>
-              <div class="card-subtitle">Free Day</div>
-            </div>
-            <span class="badge badge-green">Relax</span>
-          </div>
-          <div class="timeline">
-            <div class="timeline-item">
-              <div class="timeline-time">11:00 AM</div>
-              <div class="timeline-title">Checkout / Re-check-in</div>
-              <div class="timeline-desc">Move to 2-night stay · Conf 3507620609</div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-time">4:00 PM</div>
-              <div class="timeline-title">New room ready</div>
-              <div class="timeline-desc">Check-in time for second reservation</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-header">
-            <div>
-              <div class="card-title">Saturday, Nov 7</div>
-              <div class="card-subtitle">Wedding Day 🎉</div>
-            </div>
-            <span class="badge badge-gold">Wedding</span>
-          </div>
-          <div class="timeline">
-            <div class="timeline-item">
-              <div class="timeline-time">3:15 PM</div>
-              <div class="timeline-title">Shuttle Pickup</div>
-              <div class="timeline-desc">From Tempo by Hilton Manassas<br>Pickup times: 3:15, 3:25, 3:40</div>
-            </div>
-            <div class="timeline-item ceremony">
-              <div class="timeline-time">4:00 PM</div>
-              <div class="timeline-title">Ceremony</div>
-              <div class="timeline-desc">Sweeney Barn<br>Please arrive by 3:45 · Starts promptly at 4:00</div>
-              <a class="timeline-location" href="https://maps.google.com/?q=9319+Discovery+Blvd,+Manassas,+VA+20109" target="_blank" rel="noopener">
-                📍 9319 Discovery Blvd, Manassas, VA 20109
-              </a>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-time">4:30 PM</div>
-              <div class="timeline-title">Cocktail Hour</div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-time">5:30 – 9:30 PM</div>
-              <div class="timeline-title">Dinner & Reception</div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-time">9:15 PM</div>
-              <div class="timeline-title">Shuttle Return</div>
-              <div class="timeline-desc">Back to Tempo by Hilton<br>Pickup times: 9:20, 9:35, 9:50</div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-time">9:45 PM – 12:00 AM</div>
-              <div class="timeline-title">Afterparty</div>
-              <div class="timeline-desc">Moonsong Bar & Café (inside hotel)</div>
-              <a class="timeline-location" href="https://maps.google.com/?q=9849+Discovery+Blvd,+Manassas,+VA+20109" target="_blank" rel="noopener">
-                📍 9849 Discovery Blvd, Manassas, VA 20109
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-header">
-            <div>
-              <div class="card-title">Sunday, Nov 8</div>
-              <div class="card-subtitle">Departure</div>
-            </div>
-            <span class="badge badge-blue">Travel</span>
-          </div>
-          <div class="timeline">
-            <div class="timeline-item">
-              <div class="timeline-time">11:00 AM</div>
-              <div class="timeline-title">Hotel Checkout</div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-time">1:05 PM</div>
-              <div class="timeline-title">Depart Dulles (IAD)</div>
-              <div class="timeline-desc">United UA 777 · 2h 36m</div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-time">3:41 PM</div>
-              <div class="timeline-title">Arrive Tampa (TPA)</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Flights Page -->
-      <div class="page" id="page-flights">
-        <div class="section-title">Outbound · Nov 5</div>
-        <div class="card">
-          <div class="card-header">
-            <div>
-              <div class="card-title">United UA 1576</div>
-              <div class="card-subtitle">Operated by United Airlines</div>
-            </div>
-            <span class="badge badge-blue">Confirmed</span>
-          </div>
-
-          <div class="flight-route">
-            <div class="airport">
-              <div class="airport-code">TPA</div>
-              <div class="airport-name">Tampa, FL</div>
-              <div class="airport-time">1:55 PM</div>
-            </div>
-            <div class="flight-line">
-              <div class="plane">✈️</div>
-              <div class="line"></div>
-              <div class="duration">2h 16m</div>
-            </div>
-            <div class="airport">
-              <div class="airport-code">IAD</div>
-              <div class="airport-name">Washington, DC</div>
-              <div class="airport-time">4:11 PM</div>
-            </div>
-          </div>
-
-          <div class="flight-meta">
-            <div class="meta-item">
-              <div class="meta-label">Confirmation</div>
-              <div class="meta-value conf-code">APS3FW</div>
-            </div>
-            <div class="meta-item">
-              <div class="meta-label">Date</div>
-              <div class="meta-value">Thu, Nov 5, 2026</div>
-            </div>
-          </div>
-
-          <div class="section-title" style="margin-top:16px">Passengers</div>
-          <div class="passenger">
-            <span class="seat">8E</span>
-            <span>Theodore David White</span>
-          </div>
-          <div class="passenger">
-            <span class="seat">8F</span>
-            <span>Melody L Kay</span>
-          </div>
-
-          <div class="btn-group">
-            <a class="btn btn-secondary" href="https://www.united.com/en/us/flightstatus" target="_blank" rel="noopener">Flight Status</a>
-            <a class="btn btn-primary" href="https://www.united.com/en/us/checkin" target="_blank" rel="noopener">Check In</a>
-          </div>
-        </div>
-
-        <div class="section-title">Return · Nov 8</div>
-        <div class="card">
-          <div class="card-header">
-            <div>
-              <div class="card-title">United UA 777</div>
-              <div class="card-subtitle">Operated by United Airlines</div>
-            </div>
-            <span class="badge badge-blue">Confirmed</span>
-          </div>
-
-          <div class="flight-route">
-            <div class="airport">
-              <div class="airport-code">IAD</div>
-              <div class="airport-name">Washington, DC</div>
-              <div class="airport-time">1:05 PM</div>
-            </div>
-            <div class="flight-line">
-              <div class="plane">✈️</div>
-              <div class="line"></div>
-              <div class="duration">2h 36m</div>
-            </div>
-            <div class="airport">
-              <div class="airport-code">TPA</div>
-              <div class="airport-name">Tampa, FL</div>
-              <div class="airport-time">3:41 PM</div>
-            </div>
-          </div>
-
-          <div class="flight-meta">
-            <div class="meta-item">
-              <div class="meta-label">Confirmation</div>
-              <div class="meta-value conf-code">APS3FW</div>
-            </div>
-            <div class="meta-item">
-              <div class="meta-label">Date</div>
-              <div class="meta-value">Sun, Nov 8, 2026</div>
-            </div>
-          </div>
-
-          <div class="section-title" style="margin-top:16px">Passengers</div>
-          <div class="passenger">
-            <span class="seat">8E</span>
-            <span>Theodore David White</span>
-          </div>
-          <div class="passenger">
-            <span class="seat">8F</span>
-            <span>Melody L Kay</span>
-          </div>
-
-          <div class="btn-group">
-            <a class="btn btn-secondary" href="https://www.united.com/en/us/flightstatus" target="_blank" rel="noopener">Flight Status</a>
-            <a class="btn btn-primary" href="https://www.united.com/en/us/checkin" target="_blank" rel="noopener">Check In</a>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-title mb-8">Airport Tips</div>
-          <div class="info-row">
-            <span class="info-label">TPA bags</span>
-            <span class="info-value">No early drop &gt;4 hrs</span>
-          </div>
-          <div class="info-row">
-            <span class="info-label">Portable chargers / vapes</span>
-            <span class="info-value">Keep in carry-on</span>
-          </div>
-          <div class="info-row">
-            <span class="info-label">Recommended arrival</span>
-            <span class="info-value">2 hrs before departure</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Hotels Page -->
-      <div class="page" id="page-hotels">
-        <div class="section-title">Stay 1 · Nov 5–6</div>
-        <div class="card">
-          <div class="card-header">
-            <div>
-              <div class="card-title">Tempo by Hilton Manassas</div>
-              <div class="card-subtitle">1 Night · 2 Guests</div>
-            </div>
-            <span class="badge badge-gold">Confirmed</span>
-          </div>
-
-          <div class="hotel-dates">
-            <div class="date-box">
-              <div class="label">Check-in</div>
-              <div class="date">Thu, Nov 5</div>
-              <div class="time">4:00 PM</div>
-            </div>
-            <div class="date-box">
-              <div class="label">Check-out</div>
-              <div class="date">Fri, Nov 6</div>
-              <div class="time">11:00 AM</div>
-            </div>
-          </div>
-
-          <div class="info-row">
-            <span class="info-label">Confirmation</span>
-            <span class="info-value conf-code">3504070621</span>
-          </div>
-
-          <a class="map-link" href="https://maps.google.com/?q=Tempo+by+Hilton+Manassas" target="_blank" rel="noopener">
-            📍 Open in Maps
-          </a>
-        </div>
-
-        <div class="section-title">Stay 2 · Nov 6–8</div>
-        <div class="card">
-          <div class="card-header">
-            <div>
-              <div class="card-title">Tempo by Hilton Manassas</div>
-              <div class="card-subtitle">2 Nights · 2 Guests</div>
-            </div>
-            <span class="badge badge-gold">Confirmed</span>
-          </div>
-
-          <div class="hotel-dates">
-            <div class="date-box">
-              <div class="label">Check-in</div>
-              <div class="date">Fri, Nov 6</div>
-              <div class="time">4:00 PM</div>
-            </div>
-            <div class="date-box">
-              <div class="label">Check-out</div>
-              <div class="date">Sun, Nov 8</div>
-              <div class="time">11:00 AM</div>
-            </div>
-          </div>
-
-          <div class="info-row">
-            <span class="info-label">Confirmation</span>
-            <span class="info-value conf-code">3507620609</span>
-          </div>
-
-          <a class="map-link" href="https://maps.google.com/?q=Tempo+by+Hilton+Manassas" target="_blank" rel="noopener">
-            📍 Open in Maps
-          </a>
-        </div>
-
-        <div class="card">
-          <div class="card-title mb-8">Hotel Notes</div>
-          <div class="info-row">
-            <span class="info-label">Afterparty location</span>
-            <span class="info-value">Moonsong Bar & Café (on-site)</span>
-          </div>
-          <div class="info-row">
-            <span class="info-label">Shuttle</span>
-            <span class="info-value">Provided for wedding</span>
-          </div>
-          <div class="info-row">
-            <span class="info-label">Digital Key</span>
-            <span class="info-value">Available in Hilton app</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Wedding Page -->
-      <div class="page" id="page-wedding">
-        <div class="hero">
-          <div class="names">Laura & Alex</div>
-          <div class="date">Saturday, November 7, 2026</div>
-          <div class="venue">Sweeney Barn · Manassas, VA</div>
-        </div>
-
-        <div class="card">
-          <div class="card-title mb-8">Ceremony</div>
-          <div class="info-row">
-            <span class="info-label">Time</span>
-            <span class="info-value">4:00 PM (arrive by 3:45)</span>
-          </div>
-          <div class="info-row">
-            <span class="info-label">Venue</span>
-            <span class="info-value">Sweeney Barn</span>
-          </div>
-          <div class="info-row">
-            <span class="info-label">Address</span>
-            <span class="info-value">9319 Discovery Blvd<br>Manassas, VA 20109</span>
-          </div>
-          <a class="map-link" href="https://maps.google.com/?q=9319+Discovery+Blvd,+Manassas,+VA+20109" target="_blank" rel="noopener">
-            📍 Directions to Ceremony
-          </a>
-        </div>
-
-        <div class="card">
-          <div class="card-title mb-8">Reception</div>
-          <div class="info-row">
-            <span class="info-label">Cocktail Hour</span>
-            <span class="info-value">4:30 PM</span>
-          </div>
-          <div class="info-row">
-            <span class="info-label">Dinner & Reception</span>
-            <span class="info-value">5:30 – 9:30 PM</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-title mb-8">Transportation</div>
-          <div class="info-row">
-            <span class="info-label">Shuttle to venue</span>
-            <span class="info-value">3:15 / 3:25 / 3:40 PM</span>
-          </div>
-          <div class="info-row">
-            <span class="info-label">Pickup location</span>
-            <span class="info-value">Tempo by Hilton</span>
-          </div>
-          <div class="info-row">
-            <span class="info-label">Return shuttle</span>
-            <span class="info-value">9:20 / 9:35 / 9:50 PM</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-title mb-8">Afterparty</div>
-          <div class="info-row">
-            <span class="info-label">Time</span>
-            <span class="info-value">9:45 PM – 12:00 AM</span>
-          </div>
-          <div class="info-row">
-            <span class="info-label">Location</span>
-            <span class="info-value">Moonsong Bar & Café</span>
-          </div>
-          <div class="info-row">
-            <span class="info-label">Address</span>
-            <span class="info-value">9849 Discovery Blvd<br>(inside Tempo hotel)</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Packing Page -->
-      <div class="page" id="page-packing">
-        <div class="section-title">Packing Checklist</div>
-        <div class="card">
-          <ul class="checklist" id="packing-list">
-            <li><input type="checkbox" id="p1"><label for="p1">Wedding attire / formal wear</label></li>
-            <li><input type="checkbox" id="p2"><label for="p2">Comfortable shoes for venue</label></li>
-            <li><input type="checkbox" id="p3"><label for="p3">Toiletries & medications</label></li>
-            <li><input type="checkbox" id="p4"><label for="p4">Phone chargers & power bank</label></li>
-            <li><input type="checkbox" id="p5"><label for="p5">ID / Driver’s license</label></li>
-            <li><input type="checkbox" id="p6"><label for="p6">Boarding passes (digital or print)</label></li>
-            <li><input type="checkbox" id="p7"><label for="p7">Hotel confirmation screenshots</label></li>
-            <li><input type="checkbox" id="p8"><label for="p8">Cash / cards for tips & incidentals</label></li>
-            <li><input type="checkbox" id="p9"><label for="p9">Light jacket (November evenings)</label></li>
-            <li><input type="checkbox" id="p10"><label for="p10">Underwear & socks (4 days)</label></li>
-            <li><input type="checkbox" id="p11"><label for="p11">Casual clothes for Fri/Sun</label></li>
-            <li><input type="checkbox" id="p12"><label for="p12">Toothbrush & toothpaste</label></li>
-            <li><input type="checkbox" id="p13"><label for="p13">Deodorant / cologne / perfume</label></li>
-            <li><input type="checkbox" id="p14"><label for="p14">Any gifts / cards</label></li>
-            <li><input type="checkbox" id="p15"><label for="p15">Headphones / earplugs</label></li>
-          </ul>
-        </div>
-
-        <div class="section-title">Quick Notes</div>
-        <div class="card">
-          <div class="info-row">
-            <span class="info-label">Weather tip</span>
-            <span class="info-value">Cool November evenings</span>
-          </div>
-          <div class="info-row">
-            <span class="info-label">Venue</span>
-            <span class="info-value">Barn – possibly outdoor elements</span>
-          </div>
-          <div class="info-row">
-            <span class="info-label">Afterparty</span>
-            <span class="info-value">Casual / change if desired</span>
-          </div>
-        </div>
-
-        <button class="btn btn-secondary mt-12" id="clear-checklist">Clear All Checks</button>
-      </div>
-    </main>
-
-    <!-- Install Banner -->
-    <div class="install-banner" id="install-banner">
-      <p>Install this app for offline access</p>
-      <button id="install-btn">Install</button>
-      <button class="close" id="install-close">✕</button>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow">MANASSAS • NOV 5–8, 2026</div>
+      <h1>Laura & Alex</h1>
+      <div class="subtitle">Wedding Trip</div>
+      <div id="countdown" class="countdown" aria-live="polite"></div>
+      <button id="installBtn" class="install" hidden>Install app</button>
     </div>
+  </header>
 
-    <!-- Toast -->
-    <div class="toast" id="toast"></div>
+  <main>
+    <section class="quick-grid" aria-label="Quick actions">
+      <a class="quick-card" href="https://www.google.com/maps/search/?api=1&query=Tempo%20by%20Hilton%20Manassas%209849%20Discovery%20Blvd%20Manassas%20VA%2020109" target="_blank" rel="noopener"><span>🏨</span><b>Hotel</b><small>Open Maps</small></a>
+      <a class="quick-card" href="https://www.google.com/maps/search/?api=1&query=Sweeney%20Barn%209310%20Discovery%20Blvd%20Manassas%20VA%2020109" target="_blank" rel="noopener"><span>💍</span><b>Wedding</b><small>Open Maps</small></a>
+      <a class="quick-card" href="tel:+17034205000"><span>☎️</span><b>Hilton</b><small>703-420-5000</small></a>
+      <a class="quick-card" href="wedding-trip.ics"><span>📅</span><b>Calendar</b><small>Add trip</small></a>
+    </section>
 
-    <!-- Bottom Navigation -->
-    <nav class="bottom-nav">
-      <button class="nav-item active" data-page="timeline">
-        <span class="icon">📅</span>
-        Timeline
-      </button>
-      <button class="nav-item" data-page="flights">
-        <span class="icon">✈️</span>
-        Flights
-      </button>
-      <button class="nav-item" data-page="hotels">
-        <span class="icon">🏨</span>
-        Hotels
-      </button>
-      <button class="nav-item" data-page="wedding">
-        <span class="icon">💍</span>
-        Wedding
-      </button>
-      <button class="nav-item" data-page="packing">
-        <span class="icon">🧳</span>
-        Packing
-      </button>
+    <section id="todayCard" class="today-card" aria-live="polite">
+      <div class="today-label">TRIP STATUS</div>
+      <h2 id="todayTitle">Your wedding trip</h2>
+      <p id="todayText">Nov 5–8, 2026 • Manassas, Virginia</p>
+      <button id="todayAction" class="today-action" type="button">Open itinerary</button>
+    </section>
+
+    <nav class="tabs" aria-label="Trip sections">
+      <button class="tab active" data-tab="trip">Trip</button>
+      <button class="tab" data-tab="wedding">Wedding</button>
+      <button class="tab" data-tab="details">Details</button>
+      <button class="tab" data-tab="checklist">Checklist</button>
     </nav>
-  </div>
 
-  <script src="js/app.js"></script>
+    <section id="trip" class="panel active">
+      <div class="section-title"><span>✈️</span><div><h2>Travel itinerary</h2><p>Day-by-day • Tampa → Dulles → Manassas</p></div></div>
+
+      <div class="day-heading">Thursday, November 5 • Travel day</div>
+      <article class="card flight-card">
+        <div class="date-badge"><b>THU</b><span>NOV 5</span></div>
+        <div class="card-body">
+          <div class="status">UNITED • UA1576</div><h3>TPA <span>→</span> IAD</h3>
+          <div class="route-row"><div><strong>1:55 PM</strong><small>Tampa</small></div><div class="route-line">2h 16m</div><div class="right"><strong>4:11 PM</strong><small>Washington Dulles</small></div></div>
+          <div class="seat-row"><span>David <b>8E</b></span><span>Melody <b>8F</b></span></div><div class="confirm">Confirmation <b>APS3FW</b></div>
+        </div>
+      </article>
+      <article class="card hotel-card"><div class="date-badge hotel"><b>THU</b><span>NOV 5</span></div><div class="card-body"><div class="status">TEMPO BY HILTON MANASSAS</div><h3>First reservation</h3><p>Check in after 4:00 PM • check out Nov 6 by 11:00 AM</p><div class="confirm">Confirmation <b>3504070621</b></div></div></article>
+
+      <div class="day-heading">Friday, November 6 • Free day</div>
+      <article class="detail-card"><h3>Keep the hotel stay seamless</h3><p>Your second Tempo reservation begins today. At the first check-in, ask the front desk to link both reservations and keep the same room through Sunday if possible.</p><div class="facts"><div><dt>Reservation 2</dt><dd>3507620609</dd></div><div><dt>Standard check-in</dt><dd>4:00 PM</dd></div></div></article>
+
+      <div class="day-heading">Saturday, November 7 • Wedding day</div>
+      <article class="detail-card accent"><h3>Wedding-day snapshot</h3><p><b>3:15 PM</b> first shuttle window • <b>4:00 PM</b> ceremony • <b>5:30 PM</b> dinner & reception • <b>9:20 PM</b> first listed return pickup • <b>9:45 PM</b> afterparty.</p><button class="text-button" data-open-tab="wedding">Open full wedding schedule</button></article>
+
+      <div class="day-heading">Sunday, November 8 • Travel home</div>
+      <article class="card flight-card"><div class="date-badge"><b>SUN</b><span>NOV 8</span></div><div class="card-body"><div class="status">UNITED • UA2277</div><h3>IAD <span>→</span> TPA</h3><div class="route-row"><div><strong>1:05 PM</strong><small>Washington Dulles</small></div><div class="route-line">2h 36m</div><div class="right"><strong>3:41 PM</strong><small>Tampa</small></div></div><div class="seat-row"><span>David <b>8E</b></span><span>Melody <b>8F</b></span></div><div class="confirm">Confirmation <b>APS3FW</b></div></div></article>
+      <article class="detail-card accent"><h3>Important Sunday timing</h3><p>Hotel checkout is 11:00 AM and the flight departs IAD at 1:05 PM. Hilton lists Dulles about 24.4 miles from the hotel and the hotel does not provide an airport shuttle. Do not treat 11:00 AM checkout as your planned hotel departure time.</p></article>
+    </section>
+
+    <section id="wedding" class="panel">
+      <div class="section-title"><span>💒</span><div><h2>Wedding day</h2><p>Saturday, November 7</p></div></div>
+      <div class="timeline">
+        <div class="event"><time>3:15 PM</time><div><h3>Shuttle pickup</h3><p>Tempo by Hilton Manassas → Sweeney Barn</p><small>Approximate pickups: 3:15, 3:25, 3:40 PM</small></div></div>
+        <div class="event featured"><time>4:00 PM</time><div><h3>Ceremony</h3><p>Sweeney Barn</p><small>9310 Discovery Blvd, Manassas, VA 20109 • plan to arrive by 3:45 PM</small><a class="inline-link" href="https://www.google.com/maps/search/?api=1&query=Sweeney%20Barn%209310%20Discovery%20Blvd%20Manassas%20VA%2020109" target="_blank" rel="noopener">Open in Maps</a></div></div>
+        <div class="event"><time>4:30 PM</time><div><h3>Cocktail hour</h3><p>Sweeney Barn</p></div></div>
+        <div class="event"><time>5:30 PM</time><div><h3>Dinner & reception</h3><p>Runs until about 9:30 PM</p></div></div>
+        <div class="event"><time>9:15 PM</time><div><h3>Return shuttle begins</h3><p>Sweeney Barn → Tempo by Hilton</p><small>Approximate pickups: 9:20, 9:35, 9:50 PM</small></div></div>
+        <div class="event"><time>9:45 PM</time><div><h3>Afterparty</h3><p>Moonsong Cafe & Bar, inside the Tempo</p><small>9849 Discovery Blvd • scheduled until midnight</small><a class="inline-link" href="https://www.google.com/maps/search/?api=1&query=Moonsong%20Cafe%20Bar%209849%20Discovery%20Blvd%20Manassas%20VA%2020109" target="_blank" rel="noopener">Open in Maps</a></div></div>
+      </div>
+    </section>
+
+    <section id="details" class="panel">
+      <div class="section-title"><span>📌</span><div><h2>Trip details</h2><p>Everything you may need at a glance</p></div></div>
+      <article class="detail-card">
+        <h3>Tempo by Hilton Manassas</h3>
+        <p>9849 Discovery Blvd<br>Manassas, VA 20109</p>
+        <div class="button-row"><a href="https://www.google.com/maps/search/?api=1&query=Tempo%20by%20Hilton%20Manassas%209849%20Discovery%20Blvd%20Manassas%20VA%2020109" target="_blank" rel="noopener">Directions</a><a href="tel:+17034205000">Call hotel</a></div>
+      </article>
+      <article class="detail-card">
+        <h3>Sweeney Barn</h3>
+        <p>9310 Discovery Blvd<br>Manassas, VA 20109</p>
+        <div class="button-row"><a href="https://www.google.com/maps/search/?api=1&query=Sweeney%20Barn%209310%20Discovery%20Blvd%20Manassas%20VA%2020109" target="_blank" rel="noopener">Directions</a><a href="tel:+17032823033">Call venue</a></div>
+      </article>
+      <article class="detail-card">
+        <h3>Fast reference</h3>
+        <dl class="facts"><div><dt>United</dt><dd>APS3FW</dd></div><div><dt>Hilton Nov 5</dt><dd>3504070621</dd></div><div><dt>Hilton Nov 6–8</dt><dd>3507620609</dd></div><div><dt>Wedding</dt><dd>Sat Nov 7 • 4:00 PM</dd></div></dl>
+      </article>
+      <article class="detail-card accent">
+        <h3>Sunday timing</h3>
+        <p>Hotel checkout is 11:00 AM and your IAD flight departs at 1:05 PM. Build your airport departure plan around rental-car/ride time, IAD security and the airline's boarding cutoff.</p>
+      </article>
+    </section>
+
+    <section id="checklist" class="panel">
+      <div class="section-title"><span>✅</span><div><h2>Saved checklist</h2><p>Checks stay saved on this phone</p></div></div>
+      <div id="checklistItems" class="checklist"></div>
+      <button id="resetChecklist" class="secondary">Reset checklist</button>
+    </section>
+  </main>
+
+  <footer><span>Wedding Trip 2026</span><span>Offline-ready</span></footer>
+  <script src="app.js"></script>
 </body>
 </html>

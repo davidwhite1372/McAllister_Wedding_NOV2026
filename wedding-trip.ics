@@ -1,0 +1,41 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Wedding Trip Manassas 2026//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:ua1576-20261105@weddingtrip
+DTSTAMP:20260925T113000Z
+DTSTART;TZID=America/New_York:20261105T135500
+DTEND;TZID=America/New_York:20261105T161100
+SUMMARY:UA1576 TPA → IAD
+DESCRIPTION:United confirmation APS3FW. Seats David 8E, Melody 8F.
+LOCATION:Tampa International Airport
+END:VEVENT
+BEGIN:VEVENT
+UID:hotel-20261105@weddingtrip
+DTSTAMP:20260925T113000Z
+DTSTART;TZID=America/New_York:20261105T160000
+DTEND;TZID=America/New_York:20261108T110000
+SUMMARY:Tempo by Hilton Manassas
+DESCRIPTION:Two consecutive reservations: 3504070621 (Nov 5-6) and 3507620609 (Nov 6-8). Ask front desk to link stays.
+LOCATION:9849 Discovery Blvd, Manassas, VA 20109
+END:VEVENT
+BEGIN:VEVENT
+UID:wedding-20261107@weddingtrip
+DTSTAMP:20260925T113000Z
+DTSTART;TZID=America/New_York:20261107T151500
+DTEND;TZID=America/New_York:20261108T000000
+SUMMARY:Laura & Alex Wedding
+DESCRIPTION:3:15 PM shuttle from Tempo. 4:00 PM ceremony at Sweeney Barn. 4:30 cocktail hour. 5:30-9:30 reception. Return shuttles begin around 9:20. Afterparty at Moonsong Cafe & Bar until midnight.
+LOCATION:Sweeney Barn, 9310 Discovery Blvd, Manassas, VA 20109
+END:VEVENT
+BEGIN:VEVENT
+UID:ua2277-20261108@weddingtrip
+DTSTAMP:20260925T113000Z
+DTSTART;TZID=America/New_York:20261108T130500
+DTEND;TZID=America/New_York:20261108T154100
+SUMMARY:UA2277 IAD → TPA
+DESCRIPTION:United confirmation APS3FW. Seats David 8E, Melody 8F.
+LOCATION:Washington Dulles International Airport
+END:VEVENT
+END:VCALENDAR
