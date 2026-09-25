@@ -18,3 +18,8 @@ Final merged Progressive Web App for the November 5–8, 2026 Manassas wedding t
 - Sweeney Barn: 9310 Discovery Blvd, Manassas, VA 20109; +1 703-282-3033.
 
 Flight, reservation, and wedding schedule details are based on the supplied trip source material and confirmed itinerary data.
+
+
+## Version 1.1 update
+- Added Nov. 6 Wedding Welcome Party at Laconiko, 11301 Braden Dr, 5:00 PM; dinner and drinks served.
+- Added TPA Economy Parking workflow and Uber assumptions between IAD and Tempo.

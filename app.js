@@ -20,8 +20,8 @@ document.querySelectorAll('[data-open-tab]').forEach(btn=>btn.addEventListener('
 const savedTab=localStorage.getItem('weddingLastTab'); if(savedTab && document.getElementById(savedTab)) openTab(savedTab);
 
 const checklistData=[
- ['Travel','United check-in completed for both travelers'],['Travel','IDs / wallets / phones packed'],['Travel','Phone chargers & power bank'],['Travel','Boarding passes available offline or screenshotted'],['Travel','Hotel confirmations available offline or screenshotted'],
- ['Wedding','Wedding attire / formal wear'],['Wedding','Wedding shoes'],['Wedding','Gift / card if bringing one'],['Wedding','Wedding clothes and shoes ready Friday night'],['Wedding','At hotel lobby before the 3:15 PM shuttle window'],['Wedding','Phones charged before leaving for Sweeney Barn'],
+ ['Travel','United check-in completed for both travelers'],['Travel','IDs / wallets / phones packed'],['Travel','Phone chargers & power bank'],['Travel','Boarding passes available offline or screenshotted'],['Travel','Hotel confirmations available offline or screenshotted'],['Travel','TPA Economy Parking location saved'],['Travel','Uber app ready for IAD rides'],
+ ['Wedding','Welcome Party details saved for Friday at 5:00 PM'],['Wedding','Wedding attire / formal wear'],['Wedding','Wedding shoes'],['Wedding','Gift / card if bringing one'],['Wedding','Wedding clothes and shoes ready Friday night'],['Wedding','At hotel lobby before the 3:15 PM shuttle window'],['Wedding','Phones charged before leaving for Sweeney Barn'],
  ['Clothing','Underwear & clean socks for 4 days'],['Clothing','Casual clothes for Friday / Sunday'],['Clothing','Light jacket for November evenings'],
  ['Personal','Toiletries & medications'],['Personal','Toothbrush & toothpaste'],['Personal','Deodorant / cologne / perfume'],['Personal','Cash / cards for tips & incidentals'],['Personal','Headphones / earplugs'],
  ['Return','Return-flight check-in completed Saturday'],['Return','Sunday airport ride/departure time decided before checkout']
@@ -38,7 +38,7 @@ function updateToday(){
  const now=new Date(), title=document.getElementById('todayTitle'), text=document.getElementById('todayText'), action=document.getElementById('todayAction');
  const ymd=new Intl.DateTimeFormat('en-CA',{timeZone:'America/New_York',year:'numeric',month:'2-digit',day:'2-digit'}).format(now);
  if(ymd==='2026-11-05'){title.textContent='Today • Travel to Manassas';text.textContent='UA1576 departs TPA at 1:55 PM • arrives IAD 4:11 PM • Tempo check-in after 4:00 PM';action.textContent='Open travel day';action.onclick=()=>openTab('trip');}
- else if(ymd==='2026-11-06'){title.textContent='Today • Free day';text.textContent='Ask Tempo to keep both reservations linked and the same room through Sunday.';action.textContent='Open trip details';action.onclick=()=>openTab('trip');}
+ else if(ymd==='2026-11-06'){title.textContent='Today • Welcome Party';text.textContent='5:00 PM • Laconiko • 11301 Braden Dr • dinner & drinks served';action.textContent='Open Friday details';action.onclick=()=>openTab('trip');}
  else if(ymd==='2026-11-07'){title.textContent='Today • Wedding day';text.textContent='First shuttle 3:15 PM • arrive by 3:45 PM • ceremony 4:00 PM at Sweeney Barn';action.textContent='Open wedding schedule';action.onclick=()=>openTab('wedding');}
  else if(ymd==='2026-11-08'){title.textContent='Today • Fly home';text.textContent='UA2277 departs IAD at 1:05 PM • hotel checkout is 11:00 AM';action.textContent='Open return flight';action.onclick=()=>openTab('trip');}
  else {title.textContent='Your wedding trip';text.textContent='November 5–8, 2026 • Manassas, Virginia';action.textContent='Open itinerary';action.onclick=()=>openTab('trip');}

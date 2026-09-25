@@ -21,6 +21,15 @@ DESCRIPTION:Two consecutive reservations: 3504070621 (Nov 5-6) and 3507620609 (N
 LOCATION:9849 Discovery Blvd, Manassas, VA 20109
 END:VEVENT
 BEGIN:VEVENT
+UID:welcome-20261106@weddingtrip
+DTSTAMP:20260925T193500Z
+DTSTART;TZID=America/New_York:20261106T170000
+DTEND;TZID=America/New_York:20261106T200000
+SUMMARY:Wedding Welcome Party
+DESCRIPTION:Wedding Welcome Party at Laconiko. Dinner and drinks served.
+LOCATION:Laconiko, 11301 Braden Dr, Manassas, VA
+END:VEVENT
+BEGIN:VEVENT
 UID:wedding-20261107@weddingtrip
 DTSTAMP:20260925T113000Z
 DTSTART;TZID=America/New_York:20261107T151500
