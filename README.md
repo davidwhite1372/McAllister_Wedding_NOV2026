@@ -35,3 +35,10 @@ Flight, reservation, and wedding schedule details are based on the supplied trip
 - Added TSA PreCheck / Known Traveler Number fields to the Confirmation Wallet.
 - Traveler identifiers are stored only in local browser storage on each device and are not committed to the public repository.
 - Bumped the offline cache to v1.3.0 so installed PWAs can refresh to the new release.
+
+
+## Version 1.4 update
+- Standardized all Trip-page items onto one reusable card shell.
+- Kept the existing warm wedding color palette; item types are distinguished only by accent color and icon.
+- Added persistent per-card completion checks. Completed items remain visible but are muted and struck through.
+- Bumped the offline cache to v1.4.0.
