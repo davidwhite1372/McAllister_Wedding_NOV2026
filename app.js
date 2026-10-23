@@ -168,3 +168,16 @@ function normalizeTripCards(){
 }
 
 normalizeTripCards();
+
+
+// Prefer Lyft app; fall back to Lyft's mobile ride page if the app is unavailable.
+document.querySelectorAll('.lyft-app-link').forEach(link=>link.addEventListener('click',e=>{
+  e.preventDefault();
+  let appOpened=false;
+  const onVisibility=()=>{ if(document.hidden) appOpened=true; };
+  document.addEventListener('visibilitychange',onVisibility,{once:true});
+  window.location.href='lyft://ridetype?id=lyft';
+  setTimeout(()=>{
+    if(!appOpened && !document.hidden) window.location.href='https://ride.lyft.com/u';
+  },1200);
+}));
