@@ -65,3 +65,41 @@ document.querySelectorAll('.copy-btn').forEach(btn=>btn.addEventListener('click'
     const old=btn.textContent;btn.textContent='Copied';setTimeout(()=>btn.textContent=old,1400);
   }
 }));
+
+
+// Local-only TSA PreCheck / Known Traveler Number wallet.
+const ktnStorageKey='weddingTravelerKtns';
+const davidKtn=document.getElementById('davidKtn');
+const melodyKtn=document.getElementById('melodyKtn');
+
+function loadKtns(){
+  try{
+    const saved=JSON.parse(localStorage.getItem(ktnStorageKey)||'{}');
+    if(davidKtn) davidKtn.value=saved.david||'';
+    if(melodyKtn) melodyKtn.value=saved.melody||'';
+  }catch{}
+}
+loadKtns();
+
+document.getElementById('saveKtns')?.addEventListener('click',()=>{
+  localStorage.setItem(ktnStorageKey,JSON.stringify({
+    david:davidKtn?.value.trim()||'',
+    melody:melodyKtn?.value.trim()||''
+  }));
+  const toast=document.getElementById('copyToast');
+  if(toast){toast.textContent='TSA numbers saved on this phone';toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),1800);}
+});
+
+document.getElementById('clearKtns')?.addEventListener('click',()=>{
+  localStorage.removeItem(ktnStorageKey);
+  if(davidKtn) davidKtn.value='';
+  if(melodyKtn) melodyKtn.value='';
+});
+
+document.querySelectorAll('.reveal-btn').forEach(btn=>btn.addEventListener('click',()=>{
+  const input=document.getElementById(btn.dataset.target);
+  if(!input)return;
+  const visible=input.type==='text';
+  input.type=visible?'password':'text';
+  btn.textContent=visible?'Show':'Hide';
+}));
