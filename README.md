@@ -23,3 +23,10 @@ Flight, reservation, and wedding schedule details are based on the supplied trip
 ## Version 1.1 update
 - Added Nov. 6 Wedding Welcome Party at Laconiko, 11301 Braden Dr, 5:00 PM; dinner and drinks served.
 - Added TPA Economy Parking workflow and Uber assumptions between IAD and Tempo.
+
+
+## Version 1.2 update
+- Added Italy-style Confirmation Wallet for United and both Tempo reservations.
+- Added one-tap confirmation-number copy controls.
+- Added the final Nov. 6 welcome-party dress code and Wedding Website / Things to Do link.
+- Bumped the offline cache so installed PWAs refresh to the new version.
