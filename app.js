@@ -103,3 +103,68 @@ document.querySelectorAll('.reveal-btn').forEach(btn=>btn.addEventListener('clic
   input.type=visible?'password':'text';
   btn.textContent=visible?'Show':'Hide';
 }));
+
+
+// Unified Trip cards with persistent completion state.
+const tripCompletionKey='weddingTripCompleted';
+
+function tripItemType(article){
+  const text=article.textContent.toLowerCase();
+  if(text.includes('united') || text.includes('ua1576') || text.includes('ua2277')) return ['flight','FLIGHT','✈️'];
+  if(text.includes('tempo by hilton') || text.includes('reservation')) return ['hotel','HOTEL','🏨'];
+  if(text.includes('uber') || text.includes('parking') || text.includes('skyconnect')) return ['transport','TRANSPORT','🚗'];
+  if(text.includes('welcome party') || text.includes('laconiko')) return ['event','EVENT','🥂'];
+  if(text.includes('wedding-day') || text.includes('wedding day')) return ['wedding','WEDDING','💍'];
+  return ['other','TRIP ITEM','•'];
+}
+
+function normalizeTripCards(){
+  const trip=document.getElementById('trip');
+  if(!trip) return;
+  let saved={};
+  try{ saved=JSON.parse(localStorage.getItem(tripCompletionKey)||'{}'); }catch{}
+  const cards=[...trip.querySelectorAll('article.card, article.detail-card')];
+
+  cards.forEach((article,index)=>{
+    const [type,label,icon]=tripItemType(article);
+    article.classList.add('trip-item',`trip-type-${type}`);
+    article.dataset.tripKey=article.dataset.tripKey || `trip-${index}`;
+
+    if(!article.querySelector(':scope > .trip-card-head')){
+      const head=document.createElement('div');
+      head.className='trip-card-head';
+
+      const meta=document.createElement('div');
+      meta.className='trip-card-meta';
+      meta.innerHTML=`<span class="trip-type-icon">${icon}</span><span>${label}</span>`;
+
+      const done=document.createElement('button');
+      done.type='button';
+      done.className='trip-done';
+      done.setAttribute('aria-label','Mark trip item complete');
+      done.innerHTML='✓';
+
+      head.append(meta,done);
+      article.prepend(head);
+    }
+
+    const button=article.querySelector(':scope > .trip-card-head .trip-done');
+    const key=article.dataset.tripKey;
+    const apply=()=>{
+      const complete=!!saved[key];
+      article.classList.toggle('trip-complete',complete);
+      button.classList.toggle('checked',complete);
+      button.setAttribute('aria-pressed',String(complete));
+      button.setAttribute('aria-label',complete?'Mark trip item incomplete':'Mark trip item complete');
+    };
+    apply();
+
+    button.addEventListener('click',()=>{
+      saved[key]=!saved[key];
+      localStorage.setItem(tripCompletionKey,JSON.stringify(saved));
+      apply();
+    });
+  });
+}
+
+normalizeTripCards();
