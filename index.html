@@ -91,6 +91,16 @@
     <section id="confirmations" class="panel">
       <div class="section-title"><span>🎟️</span><div><h2>Confirmation wallet</h2><p>Reservation numbers available offline</p></div></div>
 
+      <article class="wallet-card" id="travelerIds">
+        <div class="wallet-top"><div><div class="wallet-type">TRAVELER IDENTIFIERS</div><h3>TSA PreCheck / Known Traveler Numbers</h3></div><span class="wallet-status">On-device</span></div>
+        <p class="wallet-note">Saved only on this phone. These numbers are not stored in the public GitHub repository.</p>
+        <div class="ktn-grid">
+          <label><span>David</span><input id="davidKtn" class="ktn-input" type="password" autocomplete="off" placeholder="Enter KTN"><button type="button" class="reveal-btn" data-target="davidKtn">Show</button></label>
+          <label><span>Melody</span><input id="melodyKtn" class="ktn-input" type="password" autocomplete="off" placeholder="Enter KTN"><button type="button" class="reveal-btn" data-target="melodyKtn">Show</button></label>
+        </div>
+        <div class="button-row"><button id="saveKtns" class="copy-btn" type="button">Save on this phone</button><button id="clearKtns" class="secondary compact" type="button">Clear</button></div>
+      </article>
+
       <article class="wallet-card">
         <div class="wallet-top"><div><div class="wallet-type">UNITED AIRLINES</div><h3>Round-trip flights</h3></div><span class="wallet-status">Confirmed</span></div>
         <div class="wallet-key">APS3FW</div>
