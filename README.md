@@ -29,4 +29,9 @@ Flight, reservation, and wedding schedule details are based on the supplied trip
 - Added the final Nov. 6 welcome-party dress code and Wedding Website / Things to Do link.
 - Bumped the offline cache so installed PWAs refresh to the new version.
 
-<!-- GitHub write test: 2026-10-23 -->
+
+## Version 1.3 update
+- Added a visible home-screen app version and last-updated timestamp.
+- Added TSA PreCheck / Known Traveler Number fields to the Confirmation Wallet.
+- Traveler identifiers are stored only in local browser storage on each device and are not committed to the public repository.
+- Bumped the offline cache to v1.3.0 so installed PWAs can refresh to the new release.
