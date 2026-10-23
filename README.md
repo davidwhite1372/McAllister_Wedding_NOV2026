@@ -50,3 +50,11 @@ Flight, reservation, and wedding schedule details are based on the supplied trip
 - Added a practical IAD-to-Manassas ride-time and fare benchmark with a live-fare disclaimer.
 - Moved the return transfer ahead of the return flight and added recommended IAD arrival timing.
 - Bumped the offline cache to v1.5.0.
+
+
+## Version 1.6 update
+- Replaced generic rideshare planning with the two confirmed Lyft airport reservations.
+- Added the Nov. 5 IAD-to-Tempo fare and flight-linked pickup behavior.
+- Added the Nov. 8 10:05 AM Tempo-to-IAD pickup, estimated 10:36 AM drop-off, fare, wait window, and on-time pickup coverage.
+- Added both Lyft reservations to the Confirmation Wallet.
+- Bumped the offline cache to v1.6.0.
