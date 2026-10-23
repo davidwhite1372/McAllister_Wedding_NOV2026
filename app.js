@@ -50,3 +50,18 @@ window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPro
 installBtn.addEventListener('click',async()=>{if(!deferredPrompt)return;deferredPrompt.prompt();await deferredPrompt.userChoice;deferredPrompt=null;installBtn.hidden=true;});
 window.addEventListener('appinstalled',()=>installBtn.hidden=true);
 if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js').catch(console.error));}
+
+
+// Italy-style confirmation wallet copy controls
+document.querySelectorAll('.copy-btn').forEach(btn=>btn.addEventListener('click',async()=>{
+  const value=btn.dataset.copy;
+  try{
+    await navigator.clipboard.writeText(value);
+    const toast=document.getElementById('copyToast');
+    if(toast){toast.textContent=`Copied ${value}`;toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),1800);}
+    const old=btn.textContent;btn.textContent='Copied';setTimeout(()=>btn.textContent=old,1400);
+  }catch{
+    const ta=document.createElement('textarea');ta.value=value;document.body.appendChild(ta);ta.select();document.execCommand('copy');ta.remove();
+    const old=btn.textContent;btn.textContent='Copied';setTimeout(()=>btn.textContent=old,1400);
+  }
+}));
