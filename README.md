@@ -42,3 +42,11 @@ Flight, reservation, and wedding schedule details are based on the supplied trip
 - Kept the existing warm wedding color palette; item types are distinguished only by accent color and icon.
 - Added persistent per-card completion checks. Completed items remain visible but are muted and struck through.
 - Bumped the offline cache to v1.4.0.
+
+
+## Version 1.5 update
+- Replaced the generic IAD-to-hotel note with detailed Dulles arrival and rideshare pickup instructions.
+- Added Uber, Lyft, and official Dulles ground-transportation links.
+- Added a practical IAD-to-Manassas ride-time and fare benchmark with a live-fare disclaimer.
+- Moved the return transfer ahead of the return flight and added recommended IAD arrival timing.
+- Bumped the offline cache to v1.5.0.
