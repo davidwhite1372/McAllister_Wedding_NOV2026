@@ -27,3 +27,80 @@
 .reveal-btn{border:1px solid #d7c8bc;background:#f8f2ed;color:var(--accent);border-radius:9px;padding:8px 10px;font-size:11px;font-weight:800}
 .secondary.compact{margin-top:0;padding:8px 11px}
 .button-row button{font:inherit}
+
+
+/* Unified Trip card system v1.4 */
+#trip .trip-item{
+  display:block;
+  position:relative;
+  overflow:hidden;
+  background:#fff;
+  border:1px solid var(--line);
+  border-left:4px solid var(--accent2);
+  border-radius:16px;
+  padding:15px;
+  margin:12px 0;
+  box-shadow:var(--shadow);
+  transition:opacity .18s ease, transform .18s ease, background .18s ease;
+}
+#trip .trip-item .date-badge{display:none}
+#trip .trip-item .card-body{padding:0;width:100%}
+#trip .trip-item.accent{border-left-width:4px}
+#trip .trip-card-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin:0 0 9px;
+}
+#trip .trip-card-meta{
+  display:flex;
+  align-items:center;
+  gap:7px;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.12em;
+  color:var(--accent2);
+}
+#trip .trip-type-icon{font-size:15px;line-height:1}
+#trip .trip-done{
+  width:30px;
+  height:30px;
+  flex:0 0 30px;
+  border:1.5px solid #cdbdb1;
+  border-radius:50%;
+  background:#fff;
+  color:transparent;
+  font-size:16px;
+  line-height:1;
+  font-weight:900;
+  display:grid;
+  place-items:center;
+  padding:0;
+}
+#trip .trip-done.checked{
+  background:var(--accent);
+  border-color:var(--accent);
+  color:#fff;
+}
+#trip .trip-item h3{margin:0 0 8px;font-size:20px}
+#trip .trip-item p{margin:0;color:var(--muted);line-height:1.5}
+#trip .trip-item .status{margin-bottom:5px}
+#trip .trip-item .route-row{margin-top:7px}
+#trip .trip-item .button-row{flex-wrap:wrap}
+#trip .trip-item.trip-type-flight{border-left-color:#b46f4d}
+#trip .trip-item.trip-type-flight .trip-card-meta{color:#9d5b3e}
+#trip .trip-item.trip-type-hotel{border-left-color:#6f8274}
+#trip .trip-item.trip-type-hotel .trip-card-meta{color:#587061}
+#trip .trip-item.trip-type-transport{border-left-color:#8a665a}
+#trip .trip-item.trip-type-transport .trip-card-meta{color:#765348}
+#trip .trip-item.trip-type-event{border-left-color:#a45f54}
+#trip .trip-item.trip-type-event .trip-card-meta{color:#8a4e45}
+#trip .trip-item.trip-type-wedding{border-left-color:#6d3f35}
+#trip .trip-item.trip-type-wedding .trip-card-meta{color:#6d3f35}
+#trip .trip-item.trip-complete{
+  opacity:.58;
+  background:#f7f1eb;
+}
+#trip .trip-item.trip-complete h3{text-decoration:line-through}
+#trip .trip-item.trip-complete .trip-done{opacity:1}
