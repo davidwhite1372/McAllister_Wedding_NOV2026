@@ -9,7 +9,7 @@
   <link rel="icon" href="icons/icon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="icons/icon-192.png" />
   <title>Wedding Trip — Manassas 2026</title>
-  <link rel="stylesheet" href="styles.css?v=1.6.3" />
+  <link rel="stylesheet" href="styles.css?v=1.7.0" />
 </head>
 <body>
   <header class="hero">
@@ -17,8 +17,19 @@
       <div class="eyebrow">MANASSAS • NOV 5–8, 2026</div>
       <h1>Laura & Alex</h1>
       <div class="subtitle">Wedding Trip</div>
-      <div id="countdown" class="countdown" aria-live="polite"></div>
-      <div id="appBuild" class="app-build">Wedding Trip v1.6.3 • Updated Oct 23, 2026 8:18 AM ET</div>
+      <div class="countdown-grid" aria-label="Trip countdowns">
+        <div class="countdown-tile">
+          <span>TRIP STARTS</span>
+          <strong id="tripCountdown">—</strong>
+          <small>Thu Nov 5 • UA1576 at 1:55 PM</small>
+        </div>
+        <div class="countdown-tile">
+          <span>WEDDING CEREMONY</span>
+          <strong id="weddingCountdown">—</strong>
+          <small>Sat Nov 7 • 4:00 PM</small>
+        </div>
+      </div>
+      <div id="appBuild" class="app-build">Wedding Trip v1.7.0 • Updated Oct 24, 2026 8:46 AM ET</div>
       <button id="installBtn" class="install" hidden>Install app</button>
     </div>
   </header>
@@ -29,6 +40,19 @@
       <a class="quick-card" href="https://www.google.com/maps/search/?api=1&query=Laconiko%2011301%20Braden%20Dr%20Manassas%20VA" target="_blank" rel="noopener"><span>🥂</span><b>Welcome</b><small>Friday • 5:00 PM</small></a>
       <a class="quick-card" href="https://www.google.com/maps/search/?api=1&query=Sweeney%20Barn%209310%20Discovery%20Blvd%20Manassas%20VA%2020109" target="_blank" rel="noopener"><span>💍</span><b>Wedding</b><small>Saturday • 4:00 PM</small></a>
       <a class="quick-card" href="wedding-trip.ics"><span>📅</span><b>Calendar</b><small>Add trip</small></a>
+    </section>
+
+    <section id="weatherCard" class="weather-card" aria-live="polite">
+      <div class="weather-head">
+        <div>
+          <div class="weather-label">MANASSAS WEATHER</div>
+          <h2>Trip forecast • Nov 5–8</h2>
+        </div>
+        <div id="weatherNow" class="weather-now">Loading…</div>
+      </div>
+      <div id="weatherDays" class="weather-days"></div>
+      <div id="weatherDress" class="weather-dress">Checking the forecast for clothing guidance…</div>
+      <div id="weatherUpdated" class="weather-updated"></div>
     </section>
 
     <section id="todayCard" class="today-card" aria-live="polite">
@@ -230,6 +254,6 @@
 
   <div id="copyToast" class="copy-toast" role="status" aria-live="polite"></div>
   <footer><span>Wedding Trip 2026</span><span>Offline-ready</span></footer>
-  <script src="app.js?v=1.6.3"></script>
+  <script src="app.js?v=1.7.0"></script>
 </body>
 </html>
