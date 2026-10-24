@@ -1,13 +1,20 @@
+const TRIP_START = new Date('2026-11-05T13:55:00-05:00');
 const WEDDING = new Date('2026-11-07T16:00:00-05:00');
-const countdown = document.getElementById('countdown');
-function updateCountdown(){
-  const now = new Date(), diff = WEDDING - now;
-  if(diff <= 0 && now < new Date('2026-11-08T00:00:00-05:00')){countdown.textContent='Wedding day is here';return;}
-  if(diff <= 0){countdown.textContent='Laura & Alex • November 7, 2026';return;}
-  const days=Math.floor(diff/86400000), hours=Math.floor((diff%86400000)/3600000);
-  countdown.textContent=`${days} days • ${hours} hours to the ceremony`;
+function countdownText(target,doneText){
+  const now=new Date(),diff=target-now;
+  if(diff<=0) return doneText;
+  const days=Math.floor(diff/86400000);
+  const hours=Math.floor((diff%86400000)/3600000);
+  const mins=Math.floor((diff%3600000)/60000);
+  return days>0 ? days+'d '+hours+'h '+mins+'m' : hours+'h '+mins+'m';
 }
-updateCountdown(); setInterval(updateCountdown,60000);
+function updateCountdowns(){
+  const trip=document.getElementById('tripCountdown');
+  const wedding=document.getElementById('weddingCountdown');
+  if(trip) trip.textContent=countdownText(TRIP_START,'Trip underway');
+  if(wedding) wedding.textContent=countdownText(WEDDING,'Wedding day');
+}
+updateCountdowns(); setInterval(updateCountdowns,60000);
 
 function openTab(id){
   document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x.dataset.tab===id));
@@ -52,7 +59,7 @@ window.addEventListener('appinstalled',()=>installBtn.hidden=true);
 if('serviceWorker' in navigator){
   window.addEventListener('load',async()=>{
     try{
-      const reg=await navigator.serviceWorker.register('./service-worker.js?v=1.6.3',{updateViaCache:'none'});
+      const reg=await navigator.serviceWorker.register('./service-worker.js?v=1.7.0',{updateViaCache:'none'});
       await reg.update();
     }catch(err){console.error(err);}
   });
@@ -188,3 +195,13 @@ document.querySelectorAll('.lyft-app-link').forEach(link=>link.addEventListener(
     if(!appOpened && !document.hidden) window.location.href='https://ride.lyft.com/u';
   },1200);
 }));
+
+
+// Manassas trip weather (Open-Meteo, no API key). Cached locally for offline viewing.
+const weatherCacheKey='weddingManassasWeatherV1';
+const weatherUrl='https://api.open-meteo.com/v1/forecast?latitude=38.75095&longitude=-77.47527&current=temperature_2m,apparent_temperature,weather_code,wind_speed_10m&daily=weather_code,temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,precipitation_probability_max,wind_speed_10m_max&temperature_unit=fahrenheit&wind_speed_unit=mph&timezone=America%2FNew_York&forecast_days=16';
+function weatherIcon(code){if(code===0)return '☀️';if([1,2].includes(code))return '🌤️';if(code===3)return '☁️';if([45,48].includes(code))return '🌫️';if([51,53,55,56,57].includes(code))return '🌦️';if([61,63,65,66,67,80,81,82].includes(code))return '🌧️';if([71,73,75,77,85,86].includes(code))return '🌨️';if([95,96,99].includes(code))return '⛈️';return '🌡️';}
+function dressGuidance(days){if(!days.length)return 'Trip forecast will appear when Nov 5–8 enters the forecast window.';const minLow=Math.min(...days.map(x=>x.low)),maxHigh=Math.max(...days.map(x=>x.high)),maxRain=Math.max(...days.map(x=>x.rain));const tips=[];if(minLow<=40)tips.push('pack a warm coat and layers');else if(minLow<=50)tips.push('bring a jacket and layers for mornings/evenings');else if(maxHigh<=65)tips.push('a light jacket should be useful');else tips.push('light layers should cover most daytime conditions');if(maxRain>=40)tips.push('include a compact umbrella or rain shell');return 'Dress cue: '+tips.join('; ')+'.';}
+function renderWeather(data,isCached=false){const nowEl=document.getElementById('weatherNow'),daysEl=document.getElementById('weatherDays'),dressEl=document.getElementById('weatherDress'),updatedEl=document.getElementById('weatherUpdated');if(!nowEl||!daysEl||!dressEl||!updatedEl)return;if(data.current){nowEl.innerHTML=weatherIcon(data.current.weather_code)+' <b>'+Math.round(data.current.temperature_2m)+'°</b><small>Feels '+Math.round(data.current.apparent_temperature)+'°</small>';}const tripDates=['2026-11-05','2026-11-06','2026-11-07','2026-11-08'];const rows=[];for(const date of tripDates){const i=data.daily&&data.daily.time?data.daily.time.indexOf(date):-1;if(i<0)continue;rows.push({date:date,code:data.daily.weather_code[i],high:Math.round(data.daily.temperature_2m_max[i]),low:Math.round(data.daily.temperature_2m_min[i]),rain:Math.round(data.daily.precipitation_probability_max[i]||0),wind:Math.round(data.daily.wind_speed_10m_max[i]||0)});}const names={'2026-11-05':'Thu 5','2026-11-06':'Fri 6','2026-11-07':'Sat 7','2026-11-08':'Sun 8'};if(rows.length){daysEl.innerHTML=rows.map(x=>'<div class="weather-day"><span>'+names[x.date]+'</span><b>'+weatherIcon(x.code)+' '+x.high+'°</b><small>'+x.low+'° low</small><small>'+x.rain+'% rain</small></div>').join('');}else{daysEl.innerHTML='<div class="weather-pending">The Nov 5–8 forecast is not available yet. This panel will fill in automatically as the trip gets closer.</div>';}dressEl.textContent=dressGuidance(rows);const stamp=data._savedAt?new Date(data._savedAt):new Date();updatedEl.textContent=(isCached?'Offline cached forecast':'Updated')+' • '+stamp.toLocaleString('en-US',{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'});}
+async function loadManassasWeather(){try{const res=await fetch(weatherUrl,{cache:'no-store'});if(!res.ok)throw new Error('Weather request failed');const data=await res.json();data._savedAt=Date.now();localStorage.setItem(weatherCacheKey,JSON.stringify(data));renderWeather(data,false);}catch{try{const cached=JSON.parse(localStorage.getItem(weatherCacheKey)||'null');if(cached)renderWeather(cached,true);else{const el=document.getElementById('weatherDress');if(el)el.textContent='Weather unavailable right now. Reopen the app with internet to refresh.';}}catch{}}}
+loadManassasWeather();
