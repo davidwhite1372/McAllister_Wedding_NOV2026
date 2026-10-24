@@ -16,15 +16,15 @@ function updateCountdowns(){
 }
 updateCountdowns(); setInterval(updateCountdowns,60000);
 
-function openTab(id){
+function openTab(id,{scroll=true}={}){
   document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x.dataset.tab===id));
   document.querySelectorAll('.panel').forEach(x=>x.classList.toggle('active',x.id===id));
   localStorage.setItem('weddingLastTab',id);
-  window.scrollTo({top:175,behavior:'smooth'});
+  if(scroll) window.scrollTo({top:175,behavior:'smooth'});
 }
 document.querySelectorAll('.tab').forEach(btn=>btn.addEventListener('click',()=>openTab(btn.dataset.tab)));
 document.querySelectorAll('[data-open-tab]').forEach(btn=>btn.addEventListener('click',()=>openTab(btn.dataset.openTab)));
-const savedTab=localStorage.getItem('weddingLastTab'); if(savedTab && document.getElementById(savedTab)) openTab(savedTab);
+const savedTab=localStorage.getItem('weddingLastTab'); if(savedTab && document.getElementById(savedTab)) openTab(savedTab,{scroll:false});
 
 const checklistData=[
  ['Travel','United check-in completed for both travelers'],['Travel','IDs / wallets / phones packed'],['Travel','Phone chargers & power bank'],['Travel','Boarding passes available offline or screenshotted'],['Travel','Hotel confirmations available offline or screenshotted'],['Travel','TPA Economy Parking location saved'],['Travel','Uber app ready for IAD rides'],
@@ -59,7 +59,7 @@ window.addEventListener('appinstalled',()=>installBtn.hidden=true);
 if('serviceWorker' in navigator){
   window.addEventListener('load',async()=>{
     try{
-      const reg=await navigator.serviceWorker.register('./service-worker.js?v=1.7.0',{updateViaCache:'none'});
+      const reg=await navigator.serviceWorker.register('./service-worker.js?v=1.7.1',{updateViaCache:'none'});
       await reg.update();
     }catch(err){console.error(err);}
   });
