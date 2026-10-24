@@ -104,3 +104,28 @@
 }
 #trip .trip-item.trip-complete h3{text-decoration:line-through}
 #trip .trip-item.trip-complete .trip-done{opacity:1}
+
+
+/* Home countdown + weather v1.7 */
+.countdown-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:18px}
+.countdown-tile{border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.10);border-radius:14px;padding:11px 12px;min-width:0}
+.countdown-tile span{display:block;font-size:9px;font-weight:900;letter-spacing:.12em;opacity:.78}
+.countdown-tile strong{display:block;font-size:18px;line-height:1.1;margin:5px 0 4px}
+.countdown-tile small{display:block;font-size:10px;line-height:1.3;opacity:.78}
+.weather-card{background:#fff;border:1px solid var(--line);border-left:8px solid #6f8274;border-radius:18px;padding:15px 16px;margin:16px 0 12px;box-shadow:var(--shadow)}
+.weather-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.weather-label{font-size:10px;font-weight:900;letter-spacing:.14em;color:#405849}
+.weather-head h2{font-family:Georgia,serif;font-size:20px;font-weight:500;margin:4px 0 0}
+.weather-now{text-align:right;white-space:nowrap;font-size:15px}
+.weather-now b{font-size:22px}
+.weather-now small{display:block;color:var(--muted);font-size:10px;margin-top:2px}
+.weather-days{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-top:13px}
+.weather-day{background:#f7f2ed;border-radius:11px;padding:9px 7px;text-align:center}
+.weather-day span,.weather-day small{display:block}
+.weather-day span{font-size:10px;font-weight:900;color:var(--accent)}
+.weather-day b{display:block;font-size:15px;margin:5px 0 3px}
+.weather-day small{font-size:9px;color:var(--muted);line-height:1.35}
+.weather-pending{grid-column:1/-1;color:var(--muted);font-size:12px;line-height:1.45;padding:8px 0}
+.weather-dress{margin-top:11px;padding:9px 10px;background:#edf4ef;border-radius:10px;color:#405849;font-size:11px;font-weight:800;line-height:1.45}
+.weather-updated{margin-top:7px;color:#9a8d84;font-size:9px}
+@media(max-width:480px){.countdown-tile strong{font-size:16px}.weather-card{padding:14px}.weather-days{gap:5px}.weather-day{padding:8px 4px}.weather-day b{font-size:14px}}
