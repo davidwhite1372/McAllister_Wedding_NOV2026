@@ -67,3 +67,9 @@ Flight, reservation, and wedding schedule details are based on the supplied trip
 - Cached the latest weather response locally so the most recent forecast remains visible offline.
 - Preserved the existing wedding color palette and hardened v1.6.3 PWA refresh behavior.
 - Bumped the offline cache and versioned asset URLs to v1.7.0.
+
+
+## Version 1.7.1 update
+- Fixed app startup so restoring the last selected tab no longer scrolls the home screen down.
+- Manual tab taps still use the existing smooth scroll behavior.
+- Bumped the offline cache and versioned asset URLs to v1.7.1.
