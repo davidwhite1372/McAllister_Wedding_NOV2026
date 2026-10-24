@@ -58,3 +58,12 @@ Flight, reservation, and wedding schedule details are based on the supplied trip
 - Added the Nov. 8 10:05 AM Tempo-to-IAD pickup, estimated 10:36 AM drop-off, fare, wait window, and on-time pickup coverage.
 - Added both Lyft reservations to the Confirmation Wallet.
 - Bumped the offline cache to v1.6.0.
+
+
+## Version 1.7 update
+- Replaced the single ceremony countdown with side-by-side countdowns for trip departure and wedding ceremony.
+- Added a live Manassas weather panel using Open-Meteo with current conditions and the Nov. 5–8 daily forecast when available.
+- Added simple clothing guidance based on forecast lows, highs, and rain probability.
+- Cached the latest weather response locally so the most recent forecast remains visible offline.
+- Preserved the existing wedding color palette and hardened v1.6.3 PWA refresh behavior.
+- Bumped the offline cache and versioned asset URLs to v1.7.0.
