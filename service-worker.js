@@ -1,4 +1,4 @@
-const CACHE='mcAllister-wedding-v1.7.1';
+const CACHE='mcAllister-wedding-v1.7.2';
 const ASSETS=['./','./index.html','./styles.css?v=1.7.1','./app.js?v=1.7.1','./manifest.webmanifest','./icons/icon.svg','./icons/icon-192.png','./icons/icon-512.png','./wedding-trip.ics'];
 self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
