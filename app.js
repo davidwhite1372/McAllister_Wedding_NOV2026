@@ -59,7 +59,7 @@ window.addEventListener('appinstalled',()=>installBtn.hidden=true);
 if('serviceWorker' in navigator){
   window.addEventListener('load',async()=>{
     try{
-      const reg=await navigator.serviceWorker.register('./service-worker.js?v=1.7.1',{updateViaCache:'none'});
+      const reg=await navigator.serviceWorker.register('./service-worker.js?v=1.7.4',{updateViaCache:'none'});
       await reg.update();
     }catch(err){console.error(err);}
   });
