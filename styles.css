@@ -16,7 +16,7 @@
 .wallet-details span{font-size:12px;line-height:1.4}
 .copy-toast{position:fixed;left:50%;bottom:calc(18px + env(safe-area-inset-bottom));transform:translateX(-50%) translateY(20px);background:#2b2624;color:#fff;padding:10px 14px;border-radius:999px;font-size:12px;font-weight:800;opacity:0;pointer-events:none;transition:.2s;z-index:50}
 .copy-toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
-@media(max-width:480px){.tabs{overflow:visible;grid-template-columns:repeat(6,1fr)}.tab{grid-column:span 2;padding:10px 3px}.tab:nth-child(4){grid-column:2 / span 2}.tab:nth-child(5){grid-column:4 / span 2}.wallet-key{font-size:25px}}
+@media(max-width:480px){.tabs{overflow:visible;grid-template-columns:repeat(3,1fr)}.tab{grid-column:auto;padding:10px 3px}.wallet-key{font-size:25px}}
 
 .app-build{margin-top:8px;font-size:10px;opacity:.72;letter-spacing:.02em}
 .wallet-note{font-size:11px;color:var(--muted);line-height:1.45;margin:10px 0 12px}
